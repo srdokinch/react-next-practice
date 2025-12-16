@@ -1,0 +1,62 @@
+.city-input-form {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  flex-wrap: wrap;
+}
+
+.city-input {
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 2px solid #646cff;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  color: white;
+  min-width: 300px;
+  max-width: 500px;
+  flex: 1;
+}
+
+.city-input:focus {
+  outline: none;
+  border-color: #535bf2;
+  box-shadow: 0 0 0 3px rgba(100, 108, 255, 0.2);
+}
+
+.search-button {
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  background-color: #646cff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  font-weight: 600;
+}
+
+.search-button:hover {
+  background-color: #535bf2;
+  transform: scale(1.05);
+}
+
+.search-button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 768px) {
+  .city-input-form {
+    flex-direction: column;
+  }
+
+  .city-input {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .search-button {
+    width: 100%;
+  }
+}
