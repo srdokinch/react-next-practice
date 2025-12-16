@@ -1,5 +1,5 @@
 const CityInput = ({city, setCity, onSearch}) => {
-  const handleSubbmit = (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
     if(city.trim()) {
       onSearch(city.trim())
@@ -7,6 +7,7 @@ const CityInput = ({city, setCity, onSearch}) => {
   }
 
   return (
+    // フォームが送信された時にhandleSubmitが実行されブラウザが自動でイベント情報（e）を渡す
     <form onSubmit={handleSubmit}>
       <input 
         type="text"
