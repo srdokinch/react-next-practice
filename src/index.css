@@ -15,8 +15,8 @@
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
+  /* display: flex; を削除 */
+  /* place-items: center; を削除 */
   min-width: 320px;
   min-height: 100vh;
 }
