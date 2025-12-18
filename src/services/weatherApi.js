@@ -119,3 +119,4 @@ export const getForecast = async (city) => {
     throw new Error(error.response?.data?.message || '天気予報の取得に失敗しました')
   }
 }
+
