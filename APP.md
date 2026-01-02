@@ -10,3 +10,10 @@ App.jsxで学んだことや注意事項をまとめるメモ書きのmd
 3- 検索ボタンをクリックすると`handleSearch`関数が呼び出され、現在の都市名が渡される
 
 この構造により、Appコンポーネントがステートを管理し`CityInput`コンポーネントがUIの表示とユーザー操作を担当する役割分担になっている。
+
+## IMPLEMENTATIONのステップ5で追加した部分
+4行目で必要なコンポーネントのインポート
+8行目と9行目で今日の天気データを保存するstateと明日の天気データを保存するstateを初期値`null`でセット。
+
+`<WeatherCard weather={todayWeather} title="今日の天気" />`でWeatherCardコンポーネントに今日の天気を渡し表示する
+`<WeatherCard weather={tomorrowWeather} title="明日の天気" />`で明日の天気を表示

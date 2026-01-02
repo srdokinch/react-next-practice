@@ -1,11 +1,19 @@
 import { useState } from 'react'
 import './App.css'
 import CityInput from './components/CityInput'
+import WeatherCard from './components/WeatherCard'
 
 function App() {
   const [city, setCity] = useState('')
-
-  const handleSearch = (cityName) => {
+  const [todayWeather, setTodayWeather] = useState(null)
+  const [tomorrowWeather, setTomorrowWeather] = useState(null)
+  const handleSearch = async (cityName) => {
+    try {
+      const data = await getCurrentWeather(cityName)
+      setTodayWeather(data)
+    } catch (error) {
+      console.error('エラー:', error.message)
+    }
     console.log('検索：', cityName)  //動作確認用（後でAPI呼び出しに変更するよ）
   }
   
@@ -20,9 +28,11 @@ function App() {
           setCity={setCity}
           onSearch={handleSearch}
         />
+        <WeatherCard weather={todayWeather} title="今日の天気" />
+        <WeatherCard weather={tomorrowWeather} title="明日の天気" />
       </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
