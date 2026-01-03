@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import CityInput from './components/CityInput'
 import WeatherCard from './components/WeatherCard'
+import{ getCurrentWeather } from './services/weatherApi'
 
 function App() {
   const [city, setCity] = useState('')
@@ -11,6 +12,7 @@ function App() {
     try {
       const data = await getCurrentWeather(cityName)
       setTodayWeather(data)
+      console.log('今日の天気:', data)
     } catch (error) {
       console.error('エラー:', error.message)
     }
